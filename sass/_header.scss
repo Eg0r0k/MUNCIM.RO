@@ -1,0 +1,112 @@
+.header {
+    /* .header__container */
+
+    &__container {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding-top: clamp(1rem, -0.044rem + 1.993vw, 1.75rem);
+        padding-bottom: clamp(1rem, -0.044rem + 1.993vw, 1.75rem);
+    }
+
+    /* .header__nav */
+
+    &__nav {
+    }
+}
+.nav {
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 104.348% */
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    /* .nav__menu */
+
+    &__menu {
+        gap: clamp(0.5rem, 0.136rem + 0.96vw, 1rem);
+        display: flex;
+    }
+
+    /* .nav__list */
+
+    &__list {
+    }
+
+    /* .nav__link */
+
+    &__link {
+        display: block;
+        @include border(1px, solid, $mainTextColor, "full", 100px);
+        padding: 8px 13px;
+    }
+}
+.burger {
+    display: none;
+    width: 50px;
+    height: 50px;
+}
+@media screen and (max-width: 832px) {
+    .nav {
+        &__menu {
+            z-index: 100;
+            opacity: 0;
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom:0;
+            padding: 50px;
+         
+            height: 100%;
+            background: linear-gradient(180deg, #99ff91 0%, #61d1f2 100%);
+            border-radius: 0 16px 0 0;
+            border-right: 1px solid #333;
+            flex-direction: column;
+            row-gap: 20px;
+
+            transform: translate(-100%);
+            transition: 0.4s;
+           
+        }
+    }
+    .burger {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        background-color: transparent;
+        border: none;
+       
+    }
+}
+.show {
+    opacity: 1;
+    visibility: visible;
+    transition-property: transform, scale;
+    transition-duration: 0.4s, 0.5s;
+    transform: translate(0);
+}
+
+.line {
+    background-color: $mainTextColor;
+    width: 100%;
+    height: 2px;
+    margin-bottom: 4px;
+    transition: transform 0.4s, opacity 0.4s, margin 0.4s;
+    &.open {
+        &.open {
+            &:nth-child(1) {
+              transform: translateY(13px) rotate(-43deg) ;
+            }
+      
+            &:nth-child(2) {
+              opacity: 0;
+            }
+      
+            &:nth-child(3) {
+              transform: translateY(-13px) rotate(43deg) ;
+            }
+          }
+    }
+    
+}

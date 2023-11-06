@@ -1,0 +1,121 @@
+@use "sass:math";
+
+// Обнуление стилей
+@import "./resets";
+
+// Обнуление нормализация стилей
+@import "./normalazis";
+
+@import "./mixins";
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap");
+
+//Основные цвета ========================================================================================================================================================================
+
+$mainColor: #99ff91;
+$secondColor: #ffff;
+$bodyColor: #cacaca;
+
+//Основные цвета текста ========================================================================================================================================================================
+
+$mainTextColor: rgb(0, 0, 0);
+$secondTextColor: #ffffff;
+
+// Импортированный шрифт (здесь должна быть ссылка на шрифт)
+
+// Шрифт по умолчанию
+$fontFamily: "Roboto";
+
+// Брейкпоинты
+$pc: 1440;
+$tablet: 991;
+$mobile: 767.98;
+$mobileSmall: 479.98;
+
+body {
+    font-weight: 500;
+    font-family: $fontFamily;
+    height: 100%;
+    width: 100%;
+    background-color: $bodyColor;
+  
+}
+html {
+   width: 100%;
+}
+
+
+
+[class*="__container"] {
+
+    max-width: 1470px;
+    min-width: 320px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.link {
+ 
+    transition: 0.2s;
+    text-decoration: none;
+    &:visited {
+        color: inherit;
+    }
+    &:hover {
+        color: $secondTextColor;
+    }
+    &__fill {
+        &--black {
+            background-color: $mainTextColor;
+            color: $secondTextColor !important;
+            &:hover {
+                background-color: $secondTextColor !important;
+                color: $mainTextColor !important;
+            }
+        }
+        &--main {
+            background-color: $mainColor;
+            color: $mainTextColor !important;
+            &:hover {
+                background-color: $secondTextColor !important;
+                color: $mainTextColor !important;
+            }
+        }
+    }
+}
+body::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+
+
+  }
+   
+  /* Handle */
+  body::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #99ff91 0%, #61d1f2 100%);
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+
+  .goUp{
+    position: fixed;
+    right: 0;
+    bottom:0;
+    width: 100px;
+    aspect-ratio: 1/1;
+    background-color:red;
+  }
+@import "./header";
+@import "./main";
+@import "./fonts";
+@import "./footer";
+@import "./service";
+@import "./form";
+@import "./whyUs";
+@import "./forCompany";
+@import "./workFor";
+@import "./moveText";
