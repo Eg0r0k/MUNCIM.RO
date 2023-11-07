@@ -49,6 +49,8 @@
         background: linear-gradient(180deg, #99ff91 0%, #61d1f2 100%);
     }
     &__btn {
+        cursor: pointer;
+        transition:  0.2s ease-in-out;
         text-align: center;
         font-family: Roboto;
         font-size: 21px;
@@ -61,6 +63,12 @@
         border-radius: 10px;
         border:none;
         padding: 42px 0 ;
+    
+        &:hover 
+        {   
+            background-color:$secondTextColor;
+            color:$mainTextColor;
+        }
     }
 }
 .rules {

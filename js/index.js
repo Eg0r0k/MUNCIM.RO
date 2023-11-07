@@ -1,4 +1,10 @@
-
+document.body.addEventListener('click', (e) => {
+  if (e.target.tagName === 'A' || "BUTTON") {
+    e.preventDefault();
+    e.prefereDefault = true;
+    // Ваш код для обработки клика на ссылку
+  }
+});
 const loader = document.querySelector(".loaderBg")
 window.addEventListener("load",()=>
 {

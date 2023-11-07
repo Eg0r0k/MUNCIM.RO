@@ -101,14 +101,14 @@ body::-webkit-scrollbar {
   
   /* Handle on hover */
 
-  .goUp{
-    position: fixed;
-    right: 0;
-    bottom:0;
-    width: 100px;
-    aspect-ratio: 1/1;
-    background-color:red;
-  }
+::selection
+{
+    background: $mainColor;
+}
+::-moz-selection
+{
+    background: $mainColor;
+}
 @import "./header";
 @import "./main";
 @import "./fonts";

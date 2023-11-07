@@ -32,6 +32,7 @@
         margin-bottom: clamp(1.125rem, -1.311rem + 4.651vw, 2.875rem);
     }
     &__link {
+        display: inline-block;
         &:hover 
         {
             background-color:$mainColor !important;
@@ -49,8 +50,10 @@
     }
 }
 .service {
+ 
     padding: 48px 0 ;
     &__container {
+        gap: 18px;
         overflow-y: scroll;
         display: flex;
         justify-content: space-between;
